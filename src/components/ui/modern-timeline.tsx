@@ -118,35 +118,28 @@ export function Timeline({ items, className }: TimelineProps) {
                 aria-label={`Timeline item ${index + 1}: ${item.title}`}
               >
                 <div className="flex items-start gap-4 sm:gap-6">
-                  <div className="relative flex-shrink-0">
-                    <motion.div
-                      className="relative"
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.2 }}
-                      tabIndex={0}
-                      role="img"
-                      aria-label={`Avatar for ${item.title}`}
-                    >
-                      <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 border-background shadow-lg relative z-10">
-                        {item.image ? (
-                          // eslint-disable-next-line @next/next/no-img-element
+                  {item.image && (
+                    <div className="relative flex-shrink-0">
+                      <motion.div
+                        className="relative"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
+                        tabIndex={0}
+                        role="img"
+                        aria-label={`Avatar for ${item.title}`}
+                      >
+                        <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 border-background shadow-lg relative z-10">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={item.image}
                             alt={`${item.title} avatar`}
                             className="w-full h-full object-cover"
                             loading="lazy"
                           />
-                        ) : (
-                          <div className="w-full h-full bg-muted flex items-center justify-center">
-                            <IconComponent
-                              className="w-5 h-5 sm:w-6 sm:h-6 text-muted-foreground/70"
-                              aria-hidden="true"
-                            />
-                          </div>
-                        )}
-                      </div>
-                    </motion.div>
-                  </div>
+                        </div>
+                      </motion.div>
+                    </div>
+                  )}
 
                   <motion.div
                     className="flex-1 min-w-0"
@@ -182,17 +175,19 @@ export function Timeline({ items, className }: TimelineProps) {
                             </div>
                           </div>
 
-                          <Badge
-                            className={cn(
-                              "w-fit text-xs font-medium border",
-                              config.badgeBg,
-                              config.badgeText,
-                              "border-current/20"
-                            )}
-                            aria-label={`Status: ${item.status || "upcoming"}`}
-                          >
-                            {item.status ? item.status.charAt(0).toUpperCase() + item.status.slice(1) : "Upcoming"}
-                          </Badge>
+                          {item.status && (
+                            <Badge
+                              className={cn(
+                                "w-fit text-xs font-medium border",
+                                config.badgeBg,
+                                config.badgeText,
+                                "border-current/20"
+                              )}
+                              aria-label={`Status: ${item.status}`}
+                            >
+                              {item.status.charAt(0).toUpperCase() + item.status.slice(1)}
+                            </Badge>
+                          )}
                         </div>
 
                         <motion.p
@@ -203,28 +198,30 @@ export function Timeline({ items, className }: TimelineProps) {
                           {item.description}
                         </motion.p>
 
-                        <div
-                          className="h-1 bg-muted rounded-full overflow-hidden"
-                          role="progressbar"
-                          aria-valuenow={item.status === "completed" ? 100 : item.status === "current" ? 65 : 25}
-                          aria-valuemin={0}
-                          aria-valuemax={100}
-                          aria-label={`Progress for ${item.title}`}
-                        >
-                          <motion.div
-                            className={cn("h-full rounded-full", config.progressColor)}
-                            initial={{ width: 0 }}
-                            animate={{
-                              width: item.status === "completed" ? "100%" :
-                                     item.status === "current" ? "65%" : "25%"
-                            }}
-                            transition={{
-                              duration: 1.2,
-                              delay: index * 0.2 + 0.8,
-                              ease: "easeOut"
-                            }}
-                          />
-                        </div>
+                        {item.status && (
+                          <div
+                            className="h-1 bg-muted rounded-full overflow-hidden"
+                            role="progressbar"
+                            aria-valuenow={item.status === "completed" ? 100 : item.status === "current" ? 65 : 25}
+                            aria-valuemin={0}
+                            aria-valuemax={100}
+                            aria-label={`Progress for ${item.title}`}
+                          >
+                            <motion.div
+                              className={cn("h-full rounded-full", config.progressColor)}
+                              initial={{ width: 0 }}
+                              animate={{
+                                width: item.status === "completed" ? "100%" :
+                                       item.status === "current" ? "65%" : "25%"
+                              }}
+                              transition={{
+                                duration: 1.2,
+                                delay: index * 0.2 + 0.8,
+                                ease: "easeOut"
+                              }}
+                            />
+                          </div>
+                        )}
                       </CardContent>
                     </Card>
                   </motion.div>

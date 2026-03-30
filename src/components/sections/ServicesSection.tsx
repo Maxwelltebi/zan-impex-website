@@ -13,8 +13,6 @@ const services: TimelineItem[] = [
       "We source and supply quality goods across Ghana's diverse markets. Our CEO's GIMPA-trained logistics expertise means your supply chain runs on time, every time. General goods & commodities, tyre & automotive imports, end-to-end logistics, and customs clearance.",
     date: "Est. 2021",
     category: "ZAN IMPEX Trading",
-    image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=150&h=150&fit=crop",
-    status: "completed",
   },
   {
     title: "Building Construction",
@@ -22,8 +20,6 @@ const services: TimelineItem[] = [
       "From single-family homes to multi-storey commercial builds, we deliver structures that stand for generations. Ministry of Works & Housing certified — Category D: General Building Works. Residential homes, commercial buildings, renovation & refurbishment, and full project management.",
     date: "Category D Certified",
     category: "ZAN IMPEX Construction",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=150&h=150&fit=crop",
-    status: "completed",
   },
   {
     title: "Civil Engineering",
@@ -31,8 +27,6 @@ const services: TimelineItem[] = [
       "Roads, drainage, bridges, and infrastructure that connect and grow communities. Ministry certified Category K: Civil Works — Financial Class over GHS 500,000. Road construction, drainage & culverts, site preparation, and infrastructure works.",
     date: "Category K Certified",
     category: "ZAN IMPEX Civil Works",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=150&h=150&fit=crop",
-    status: "completed",
   },
   {
     title: "Electrical Engineering",
@@ -40,8 +34,6 @@ const services: TimelineItem[] = [
       "Safe, code-compliant electrical installations led by our Director — a dual-qualified Biomedical and Electrical Engineering Technician trained in Ghana and Canada. Power distribution, industrial installations, residential wiring, and safety inspections.",
     date: "Active",
     category: "ZAN IMPEX Electrical",
-    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=150&h=150&fit=crop",
-    status: "current",
   },
   {
     title: "Real Estate Development",
@@ -49,8 +41,6 @@ const services: TimelineItem[] = [
       "We develop, manage, and invest in sustainable properties across Greater Accra. From land acquisition through to property management — one partner, full lifecycle. Property development, land acquisition, property management, and investor partnerships.",
     date: "Expanding",
     category: "ZAN IMPEX Realty",
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=150&h=150&fit=crop",
-    status: "upcoming",
   },
 ];
 
