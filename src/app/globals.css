@@ -30,6 +30,10 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
 
+  /* Status colors */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+
   /* ZAN IMPEX brand colors */
   --color-brand-green: #1B6B35;
   --color-brand-green-dark: #0D3D1E;
@@ -48,6 +52,10 @@
 }
 
 :root {
+  --success: oklch(0.70 0.15 145);
+  --success-foreground: oklch(0.98 0 0);
+  --warning: oklch(0.75 0.12 85);
+  --warning-foreground: oklch(0.15 0 0);
   --background: #F8F6F1;
   --foreground: #1C1C1C;
   --card: #FFFFFF;
