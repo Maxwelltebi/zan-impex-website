@@ -116,17 +116,17 @@ export function PortfolioSection() {
         {/* Grid — flip cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((p, i) => (
-            <div
+            <motion.div
               key={p.id}
               className="group cursor-pointer"
               style={{ perspective: "1000px", height: "360px" }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
             >
-              <motion.div
+              <div
                 className="relative w-full h-full transition-[transform] duration-700 ease-in-out group-hover:[transform:rotateY(180deg)]"
                 style={{ transformStyle: "preserve-3d" }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
               >
                 {/* FRONT */}
                 <div
@@ -162,8 +162,8 @@ export function PortfolioSection() {
                     <span>→</span>
                   </div>
                 </div>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           ))}
         </div>
 
