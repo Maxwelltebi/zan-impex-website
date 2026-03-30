@@ -8,7 +8,6 @@ import {
   Card,
   CardHeader,
   CardContent,
-  CardFooter,
 } from "@/components/ui/card";
 
 const services = [
@@ -92,7 +91,7 @@ export function ServicesSection() {
           </p>
         </motion.div>
 
-        {/* Services grid */}
+        {/* Services grid — 5 cards only */}
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-3">
           {services.map((s, i) => {
             const Icon = s.icon;
@@ -141,42 +140,31 @@ export function ServicesSection() {
               </motion.div>
             );
           })}
-
-          {/* Why One Partner card */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: services.length * 0.08 }}
-          >
-            <Card className="flex flex-col h-full bg-charcoal border-0 text-white">
-              <CardHeader className="pb-3">
-                <p className="font-mono text-[10px] uppercase tracking-widest text-brand-gold-light">
-                  Why One Partner?
-                </p>
-                <h3 className="text-xl font-bold leading-snug text-white">
-                  Eliminate the Coordination Tax
-                </h3>
-              </CardHeader>
-
-              <CardContent className="flex-1">
-                <p className="text-white/70 text-sm leading-relaxed">
-                  Most clients pay a hidden tax managing multiple contractors who don&apos;t communicate.
-                  ZAN IMPEX integrates every discipline under one accountable roof — so your project
-                  stays on time and on budget.
-                </p>
-              </CardContent>
-
-              <CardFooter>
-                <button
-                  onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-                  className="w-full py-3 bg-brand-green rounded-lg text-white text-sm font-medium hover:bg-brand-green-dark transition-colors text-center"
-                >
-                  Start Your Project →
-                </button>
-              </CardFooter>
-            </Card>
-          </motion.div>
         </div>
+
+        {/* Why One Partner — full-width callout, not a card */}
+        <motion.div
+          className="mt-8 rounded-2xl bg-charcoal px-8 py-7 flex flex-col sm:flex-row items-center justify-between gap-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.5 }}
+        >
+          <div>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-brand-gold-light mb-1">Why One Partner?</p>
+            <p className="font-sans font-bold text-white text-lg">Eliminate the Coordination Tax</p>
+            <p className="text-white/60 text-sm mt-1 max-w-xl">
+              Most clients pay a hidden tax managing multiple contractors who don&apos;t communicate.
+              ZAN IMPEX integrates every discipline under one accountable roof — so your project stays on time and on budget.
+            </p>
+          </div>
+          <button
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            className="flex-shrink-0 px-6 py-3 bg-brand-green rounded-lg text-white text-sm font-medium hover:bg-brand-green-dark transition-colors whitespace-nowrap"
+          >
+            Start Your Project →
+          </button>
+        </motion.div>
+
       </div>
     </section>
   );

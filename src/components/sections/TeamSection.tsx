@@ -72,71 +72,68 @@ export function TeamSection() {
           </p>
         </motion.div>
 
-        {/* Team cards */}
+        {/* Team flip cards */}
         <div className="grid md:grid-cols-3 gap-8">
           {team.map((member, i) => (
             <motion.div
               key={member.name}
-              className="bg-white rounded-3xl overflow-hidden border border-border shadow-card hover:shadow-card-hover transition-all duration-300 group"
+              className="group cursor-pointer"
+              style={{ perspective: "1000px", height: "440px" }}
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: i * 0.12 }}
             >
-              {/* Avatar */}
-              <div className={`${member.color} h-40 flex items-end justify-center pb-0 relative overflow-hidden`}>
-                <div className="w-28 h-28 rounded-full border-4 border-white overflow-hidden mb-[-40px] relative z-10 shadow-card">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={member.avatar}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                  />
+              <div
+                className="relative w-full h-full transition-[transform] duration-700 ease-in-out group-hover:[transform:rotateY(180deg)]"
+                style={{ transformStyle: "preserve-3d" }}
+              >
+                {/* FRONT */}
+                <div
+                  className="absolute inset-0 rounded-3xl bg-white border border-border overflow-hidden"
+                  style={{ backfaceVisibility: "hidden" }}
+                >
+                  {/* Colored header */}
+                  <div className={`${member.color} h-44 flex items-end justify-center relative overflow-hidden`}>
+                    <div className="w-28 h-28 rounded-full border-4 border-white overflow-hidden mb-[-40px] relative z-10 shadow-card">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={member.avatar} alt={member.name} className="w-full h-full object-cover" />
+                    </div>
+                    <span className="absolute top-4 right-4 font-sans font-black text-6xl text-white/10 pointer-events-none select-none">
+                      {member.initials}
+                    </span>
+                  </div>
+                  {/* Text */}
+                  <div className="pt-14 px-6 pb-6 text-center">
+                    <h3 className="font-sans font-bold text-charcoal text-lg mb-1">{member.name}</h3>
+                    <p className="text-brand-green font-sans text-sm font-medium mb-6">{member.role}</p>
+                    <p className="text-warm-gray/70 text-xs font-sans italic font-mono uppercase tracking-widest">Hover for credentials →</p>
+                  </div>
                 </div>
-                {/* Decorative initials watermark */}
-                <span className="absolute top-4 right-4 font-sans font-black text-6xl text-white/10 pointer-events-none select-none">
-                  {member.initials}
-                </span>
-              </div>
 
-              {/* Content */}
-              <div className="pt-14 px-6 pb-6">
-                <h3 className="font-sans font-bold text-charcoal text-lg text-center mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-brand-green font-sans text-sm font-medium text-center mb-4">
-                  {member.role}
-                </p>
-
-                <p className="text-warm-gray text-sm font-sans leading-relaxed mb-5">
-                  {member.focus}
-                </p>
-
-                <div className="border-t border-border pt-4">
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-brand-gold mb-2">
-                    Credentials
-                  </p>
-                  <ul className="space-y-1.5">
-                    {member.credentials.map((c) => (
-                      <li key={c} className="flex items-start gap-2 text-xs text-charcoal font-sans">
-                        <span className="w-1 h-1 rounded-full bg-brand-green flex-shrink-0 mt-1.5" />
-                        {c}
-                      </li>
-                    ))}
-                  </ul>
+                {/* BACK */}
+                <div
+                  className="absolute inset-0 rounded-3xl bg-charcoal flex flex-col justify-center p-7"
+                  style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+                >
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-brand-gold mb-1">{member.role}</p>
+                  <h3 className="font-sans font-bold text-white text-xl mb-3">{member.name}</h3>
+                  <p className="text-white/70 text-sm font-sans leading-relaxed mb-5">{member.focus}</p>
+                  <div>
+                    <p className="font-mono text-[10px] uppercase tracking-widest text-brand-gold mb-2">Credentials</p>
+                    <ul className="space-y-2">
+                      {member.credentials.map((c) => (
+                        <li key={c} className="flex items-start gap-2 text-xs text-white/80 font-sans">
+                          <span className="w-1 h-1 rounded-full bg-brand-gold flex-shrink-0 mt-1.5" />
+                          {c}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
-
-        <motion.p
-          className="text-center text-warm-gray text-xs font-sans mt-8 italic"
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.7, duration: 0.5 }}
-        >
-          Professional headshots to replace placeholder avatars before launch.
-        </motion.p>
       </div>
     </section>
   );

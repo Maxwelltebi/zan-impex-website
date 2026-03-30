@@ -61,16 +61,17 @@ export function AboutSection() {
               of quality, safety, and compliance.
             </p>
 
-            {/* Pillars */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* Pillars — plain list, no card styling */}
+            <div className="grid grid-cols-2 gap-5">
               {[
                 { title: "Integrity", desc: "Transparent contracts, honest timelines, fair pricing." },
                 { title: "Excellence", desc: "International standards with a Ghanaian heart." },
                 { title: "Innovation", desc: "One partner for five sectors — no coordination overhead." },
                 { title: "Sustainability", desc: "Building for now, planning for generations." },
               ].map((p) => (
-                <div key={p.title} className="bg-brand-green-light rounded-xl p-4">
-                  <h4 className="font-sans font-semibold text-brand-green text-sm mb-1">{p.title}</h4>
+                <div key={p.title} className="flex flex-col gap-1">
+                  <div className="w-6 h-0.5 bg-brand-green mb-1" />
+                  <h4 className="font-sans font-semibold text-charcoal text-sm">{p.title}</h4>
                   <p className="text-warm-gray text-xs leading-relaxed">{p.desc}</p>
                 </div>
               ))}
@@ -83,7 +84,7 @@ export function AboutSection() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            {/* Dummy image */}
+            {/* Image */}
             <div className="rounded-3xl overflow-hidden mb-8 aspect-[4/3] bg-brand-green-light flex items-center justify-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -93,11 +94,11 @@ export function AboutSection() {
               />
             </div>
 
-            {/* Stats grid */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* Stats — borderless, no card, left-border accent */}
+            <div className="grid grid-cols-2 gap-6">
               {stats.map((s) => (
-                <div key={s.label} className="rounded-2xl border border-border bg-white p-5">
-                  <p className="font-sans font-bold text-brand-green text-2xl mb-1">{s.value}</p>
+                <div key={s.label} className="flex flex-col gap-1 border-l-2 border-brand-green pl-4">
+                  <p className="font-sans font-bold text-brand-green text-2xl">{s.value}</p>
                   <p className="text-warm-gray text-xs font-sans uppercase tracking-wide">{s.label}</p>
                 </div>
               ))}

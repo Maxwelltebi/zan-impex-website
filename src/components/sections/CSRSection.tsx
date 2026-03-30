@@ -77,20 +77,20 @@ export function CSRSection() {
             </div>
           </motion.div>
 
-          {/* Right: Initiatives */}
+          {/* Right: Initiatives — plain rows, no card styling */}
           <div className="space-y-5">
             {initiatives.map((item, i) => {
               const Icon = item.icon;
               return (
                 <motion.div
                   key={item.title}
-                  className="bg-white rounded-2xl p-5 border border-border shadow-card flex gap-4"
+                  className="flex gap-4 border-l-2 border-brand-green pl-4 py-1"
                   initial={{ opacity: 0, x: 24 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                 >
-                  <div className="w-10 h-10 rounded-xl bg-brand-green-light flex items-center justify-center flex-shrink-0">
-                    <Icon size={18} className="text-brand-green" />
+                  <div className="w-9 h-9 rounded-xl bg-brand-green-light flex items-center justify-center flex-shrink-0">
+                    <Icon size={16} className="text-brand-green" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2 mb-1 flex-wrap">

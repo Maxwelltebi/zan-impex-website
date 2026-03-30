@@ -113,36 +113,57 @@ export function PortfolioSection() {
           ))}
         </motion.div>
 
-        {/* Grid */}
+        {/* Grid — flip cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((p, i) => (
-            <motion.div
+            <div
               key={p.id}
-              className="rounded-3xl overflow-hidden group cursor-pointer border border-border hover:shadow-card-hover transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className="group cursor-pointer"
+              style={{ perspective: "1000px", height: "360px" }}
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={p.image}
-                  alt={p.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute top-3 left-3">
-                  <span className="bg-brand-green text-white text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full">
+              <motion.div
+                className="relative w-full h-full transition-[transform] duration-700 ease-in-out group-hover:[transform:rotateY(180deg)]"
+                style={{ transformStyle: "preserve-3d" }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+              >
+                {/* FRONT */}
+                <div
+                  className="absolute inset-0 rounded-3xl overflow-hidden"
+                  style={{ backfaceVisibility: "hidden" }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
+                  <span className="absolute top-3 left-3 bg-brand-green text-white text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full">
                     {p.tag}
                   </span>
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <h3 className="font-sans font-bold text-white text-lg leading-snug">{p.title}</h3>
+                    <p className="text-white/60 text-xs mt-1 font-mono uppercase tracking-widest">Hover to learn more</p>
+                  </div>
                 </div>
-              </div>
-              <div className="p-5">
-                <h3 className="font-sans font-bold text-charcoal text-lg mb-1 leading-snug">
-                  {p.title}
-                </h3>
-                <p className="text-warm-gray text-sm font-sans">{p.description}</p>
-              </div>
-            </motion.div>
+
+                {/* BACK */}
+                <div
+                  className="absolute inset-0 rounded-3xl bg-brand-green flex flex-col justify-between p-7"
+                  style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+                >
+                  <div>
+                    <span className="inline-block bg-white/20 text-brand-gold-light text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full mb-4">
+                      {p.tag}
+                    </span>
+                    <h3 className="font-sans font-bold text-white text-xl mb-3 leading-snug">{p.title}</h3>
+                    <p className="text-white/80 text-sm font-sans leading-relaxed">{p.description}</p>
+                  </div>
+                  <div className="flex items-center gap-2 text-brand-gold-light text-xs font-mono uppercase tracking-widest mt-4">
+                    <span>View Project</span>
+                    <span>→</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           ))}
         </div>
 
