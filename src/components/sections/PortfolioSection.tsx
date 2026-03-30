@@ -80,7 +80,7 @@ export function PortfolioSection() {
             Our Work
           </p>
           <h2
-            className="font-display font-bold text-charcoal mb-4"
+            className="font-sans font-bold text-charcoal mb-4"
             style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
           >
             Projects That{" "}
@@ -137,7 +137,7 @@ export function PortfolioSection() {
                 </div>
               </div>
               <div className="p-5">
-                <h3 className="font-display font-bold text-charcoal text-lg mb-1 leading-snug">
+                <h3 className="font-sans font-bold text-charcoal text-lg mb-1 leading-snug">
                   {p.title}
                 </h3>
                 <p className="text-warm-gray text-sm font-sans">{p.description}</p>

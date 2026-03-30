@@ -78,7 +78,7 @@ export function StaggerTestimonials({ testimonials, className }: StaggerTestimon
                 )}
               >
                 {/* Quote mark */}
-                <div className={cn("text-5xl font-display leading-none mb-2",
+                <div className={cn("text-5xl font-sans leading-none mb-2",
                   isCenter ? "text-brand-gold-light opacity-60" : "text-brand-green opacity-20")}>
                   &ldquo;
                 </div>

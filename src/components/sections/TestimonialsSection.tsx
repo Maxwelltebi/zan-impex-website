@@ -75,7 +75,7 @@ export function TestimonialsSection() {
             Client Stories
           </p>
           <h2
-            className="font-display font-bold text-charcoal mb-4"
+            className="font-sans font-bold text-charcoal mb-4"
             style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
           >
             What Our Clients{" "}

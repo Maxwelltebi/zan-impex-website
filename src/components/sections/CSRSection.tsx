@@ -54,7 +54,7 @@ export function CSRSection() {
               Corporate Social Responsibility
             </p>
             <h2
-              className="font-display font-bold text-charcoal mb-6"
+              className="font-sans font-bold text-charcoal mb-6"
               style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
             >
               Building Ghana.{" "}

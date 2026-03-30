@@ -30,7 +30,7 @@ export function AboutSection() {
 
         {/* Headline */}
         <motion.h2
-          className="font-display font-bold text-charcoal mb-8 max-w-3xl"
+          className="font-sans font-bold text-charcoal mb-8 max-w-3xl"
           style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -97,7 +97,7 @@ export function AboutSection() {
             <div className="grid grid-cols-2 gap-4">
               {stats.map((s) => (
                 <div key={s.label} className="rounded-2xl border border-border bg-white p-5">
-                  <p className="font-display font-bold text-brand-green text-2xl mb-1">{s.value}</p>
+                  <p className="font-sans font-bold text-brand-green text-2xl mb-1">{s.value}</p>
                   <p className="text-warm-gray text-xs font-sans uppercase tracking-wide">{s.label}</p>
                 </div>
               ))}

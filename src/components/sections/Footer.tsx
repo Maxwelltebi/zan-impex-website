@@ -36,11 +36,11 @@ export function Footer() {
               <div className="w-8 h-8 rounded-full bg-brand-green flex items-center justify-center flex-shrink-0">
                 <span className="text-white font-bold text-xs">ZI</span>
               </div>
-              <span className="font-display font-bold text-white text-xl tracking-tight">
+              <span className="font-sans font-bold text-white text-xl tracking-tight">
                 ZAN IMPEX LIMITED
               </span>
             </div>
-            <p className="font-display text-brand-gold-light text-lg italic mb-4">
+            <p className="font-sans text-brand-gold-light text-lg italic mb-4">
               Building Tomorrow Today
             </p>
             <p className="text-white/60 font-sans text-sm leading-relaxed max-w-sm mb-6">

@@ -60,7 +60,7 @@ export function ContactSection() {
             Get in Touch
           </p>
           <h2
-            className="font-display font-bold text-charcoal mb-4"
+            className="font-sans font-bold text-charcoal mb-4"
             style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
           >
             Start Your Project{" "}
@@ -139,7 +139,7 @@ export function ContactSection() {
                 <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center mb-5">
                   <Send size={28} className="text-white" />
                 </div>
-                <h3 className="font-display font-bold text-2xl mb-3">Message Received!</h3>
+                <h3 className="font-sans font-bold text-2xl mb-3">Message Received!</h3>
                 <p className="text-white/80 font-sans">
                   Thank you for reaching out. The ZAN IMPEX team will respond within one business day.
                 </p>

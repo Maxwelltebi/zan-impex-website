@@ -38,7 +38,7 @@ export function HandWrittenTitle({
 
         {/* Title */}
         <motion.h1
-          className="relative z-10 font-display font-black text-charcoal leading-tight py-6 px-12"
+          className="relative z-10 font-sans font-extrabold text-charcoal leading-tight py-6 px-12"
           style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}

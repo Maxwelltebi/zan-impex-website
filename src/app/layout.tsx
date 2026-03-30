@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, DM_Mono } from "next/font/google";
+import { Sora, DM_Mono } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const sora = Sora({
   subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-sora",
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 const dmMono = DM_Mono({
@@ -46,7 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfair.variable} ${dmMono.variable} h-full antialiased`}
+      className={`${sora.variable} ${dmMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

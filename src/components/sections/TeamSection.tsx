@@ -60,7 +60,7 @@ export function TeamSection() {
             Leadership
           </p>
           <h2
-            className="font-display font-bold text-charcoal mb-4"
+            className="font-sans font-bold text-charcoal mb-4"
             style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}
           >
             The People Behind{" "}
@@ -93,14 +93,14 @@ export function TeamSection() {
                   />
                 </div>
                 {/* Decorative initials watermark */}
-                <span className="absolute top-4 right-4 font-display font-black text-6xl text-white/10 pointer-events-none select-none">
+                <span className="absolute top-4 right-4 font-sans font-black text-6xl text-white/10 pointer-events-none select-none">
                   {member.initials}
                 </span>
               </div>
 
               {/* Content */}
               <div className="pt-14 px-6 pb-6">
-                <h3 className="font-display font-bold text-charcoal text-lg text-center mb-1">
+                <h3 className="font-sans font-bold text-charcoal text-lg text-center mb-1">
                   {member.name}
                 </h3>
                 <p className="text-brand-green font-sans text-sm font-medium text-center mb-4">

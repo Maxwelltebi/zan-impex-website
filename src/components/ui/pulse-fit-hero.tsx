@@ -126,7 +126,7 @@ export function PulseFitHero({
           <div className="w-8 h-8 rounded-full bg-brand-green flex items-center justify-center">
             <span className="text-white font-bold text-xs">ZI</span>
           </div>
-          <span className="font-display font-bold text-charcoal text-lg tracking-tight">
+          <span className="font-sans font-bold text-charcoal text-lg tracking-tight">
             {logo}
           </span>
         </div>
@@ -216,7 +216,7 @@ export function PulseFitHero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h1 className="font-display font-black text-charcoal leading-tight mb-4"
+            <h1 className="font-sans font-black text-charcoal leading-tight mb-4"
               style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)" }}>
               {title}
             </h1>
