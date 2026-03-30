@@ -28,7 +28,7 @@ export function Footer() {
   return (
     <footer id="footer" className="bg-charcoal text-white">
       {/* Main footer */}
-      <div className="max-w-6xl mx-auto px-6 lg:px-12 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-10">
           {/* Brand column */}
           <div className="lg:col-span-2">
@@ -100,7 +100,7 @@ export function Footer() {
 
       {/* Ministry cert bar */}
       <div className="border-t border-white/10 bg-brand-green/20">
-        <div className="max-w-6xl mx-auto px-6 lg:px-12 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs font-mono text-brand-gold uppercase tracking-widest">
             Ministry of Works & Housing Certified · Category D & K · GHS 500,000+
           </p>
@@ -110,7 +110,7 @@ export function Footer() {
 
       {/* Copyright */}
       <div className="border-t border-white/5">
-        <div className="max-w-6xl mx-auto px-6 lg:px-12 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-xs font-sans text-white/30">
             © {new Date().getFullYear()} ZAN IMPEX LIMITED. All rights reserved.
           </p>

@@ -48,7 +48,7 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="py-24 bg-off-white">
-      <div className="max-w-6xl mx-auto px-6 lg:px-12" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         {/* Header */}
         <motion.div
           className="text-center mb-16"

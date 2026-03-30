@@ -17,7 +17,7 @@ export function AboutSection() {
 
   return (
     <section id="about" className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6 lg:px-12" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         {/* Eyebrow */}
         <motion.p
           className="font-mono text-xs uppercase tracking-widest text-brand-gold mb-4"

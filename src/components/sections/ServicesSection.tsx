@@ -50,7 +50,7 @@ export function ServicesSection() {
 
   return (
     <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-off-white">
-      <div className="max-w-6xl mx-auto px-6 lg:px-12" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
 
         {/* Header */}
         <motion.div
@@ -78,7 +78,7 @@ export function ServicesSection() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <Timeline items={services} className="max-w-3xl" />
+          <Timeline items={services} className="max-w-none" />
         </motion.div>
 
         {/* Why One Partner callout */}

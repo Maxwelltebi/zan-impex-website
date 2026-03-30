@@ -60,7 +60,7 @@ const getStatusIcon = (status: TimelineItem["status"]) => {
 export function Timeline({ items, className }: TimelineProps) {
   if (!items || items.length === 0) {
     return (
-      <div className={cn("w-full max-w-4xl mx-auto px-4 sm:px-6 py-8", className)}>
+      <div className={cn("w-full px-0 py-8", className)}>
         <p className="text-center text-muted-foreground">No timeline items to display</p>
       </div>
     )
@@ -68,7 +68,7 @@ export function Timeline({ items, className }: TimelineProps) {
 
   return (
     <section
-      className={cn("w-full max-w-4xl mx-auto px-4 sm:px-6 py-8", className)}
+      className={cn("w-full px-0 py-8", className)}
       role="list"
       aria-label="Timeline of events and milestones"
     >
